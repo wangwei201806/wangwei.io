@@ -1,27 +1,78 @@
-<!DOCTYPE html>
-
-<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
-
-<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
-
-<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
-
-<!-- BEGIN HEAD -->
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
-	<body id='as'>
-	
-	</body>
-	
-
-<script type="text/javascript">  
-	setTimeout(function(){alert("Hello,sb")},1000);
-	
-	
-	</script>  
-
-<script type="text/javascript">  var _gaq = _gaq || [];  _gaq.push(['_setAccount', 'UA-37564768-1']);  _gaq.push(['_setDomainName', 'keenthemes.com']);  _gaq.push(['_setAllowLinker', true]);  _gaq.push(['_trackPageview']);  (function() {    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;    ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);  })();</script></body>
-
-<!-- END BODY -->
-
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+<script type="text/javascript">
+function myadd(obj,e,fn){
+	if(obj.attachEvent){
+		obj.attachEvent("on"+e, fn);
+	}else{
+		obj.addEventListener(e,fn,false);
+	}
+}
+myadd(window, 'load',function(){
+	var box1 = document.getElementById("box1");
+	var close = document.getElementById("close");
+	var nr = document.getElementById("nr");
+	var i = 0;
+	var shuzu = [
+		'哈哈你被整了！1',
+		'哈哈你被整了！2',
+		'哈哈你被整了！3',
+		'哈哈你被整了！4',
+		'哈哈你被整了！5',
+		'哈哈你被整了！6',
+		'哈哈你被整了！7',
+		'哈哈你被整了！8',
+		'哈哈你被整了！9',
+		'哈哈你被整了！0','哈哈你被整了！1',
+		'哈哈你被整了！2'
+	]
+	close.onclick =  function(){
+		i++;
+		if(i == 12){
+			i = 0;
+		}
+		nr.innerHTML = shuzu[i]
+		box1.style.display = 'none'
+		window.setTimeout(function(){
+			box1.style.display = 'block'
+		},400)
+	}
+})
+</script>
+</head>
+<style type="text/css">
+    .box1{
+		
+		background:#ccc;
+		width:200px;
+		margin:200px auto;
+		
+	}
+	.bgs{
+		position:fixed;
+		top: 0px;
+		left: 0px;
+		background:rgba(0,0,0,0.4);
+		width:100%;
+		height: 100%;
+	}
+	.box1 .close{
+		font-size: 18px;
+		line-height:40px;
+		background:red;
+		color:white;
+		cursor: pointer;
+	}
+</style>
+<body>
+	<div class="bgs" id = 'box1'>
+	<div class="box1" >
+		<div class="close" id = 'close' style = 'text-align:ceter;'>点我关闭吧 x</div>
+		<div class="nr" id= 'nr'>哈哈你被整了！</div>
+	</div>
+	</div>
+</body>
 </html>
